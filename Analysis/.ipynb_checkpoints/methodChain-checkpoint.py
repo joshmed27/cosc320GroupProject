@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 # Method Chaining
-def load_and_processText(path):
+def load_and_processText():
     # Chain 1: Data loaded and missing data removed
     df1 = (
         pd.read_csv(os.path.join('..','Dataset','helpfulness_reviews_worst_apps.csv'))
@@ -21,7 +21,7 @@ def load_and_processText(path):
     )
     return df2
 
-def load_and_processSlang(path):
+def load_and_processSlang():
     # Chain 1: Data loaded
     df1 = (
         pd.read_csv(os.path.join('..','Dataset','slangs.csv'))
