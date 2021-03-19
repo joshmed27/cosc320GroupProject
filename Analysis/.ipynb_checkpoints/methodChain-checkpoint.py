@@ -22,7 +22,7 @@ def load_and_processText(path):
     return df2
 
 def load_and_processSlang(path):
-    # Chain 1: Data loaded and missing data removed
+    # Chain 1: Data loaded
     df1 = (
         pd.read_csv(os.path.join('..','Dataset','slangs.csv'))
     )
