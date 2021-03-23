@@ -18,8 +18,26 @@ def tryItABunch(myFn, startN=10, endN=100, stepSize=10, numTrials=20, listMax = 
     for n in range(startN, endN, stepSize):
         # run myFn several times and average to get a decent idea.
         runtime = 0
+        new_tweet= ["AFAIK the earth is flat lol hahaha",
+
+"r u serious,, frodo IS mumble happyfeet??",
+"ym, there's no need to feel down",
+"there are ppl who still say FTW.. me being one of them :)",
+"imo pineapples do not belong on pizza",
+"i need a new flick to watch, any suggestions?",
+"Google plz release your next pixel ASAP!!!! IM SO FRIGGIN IMPATIENT!!1!11!",
+"2day i will buy a laptop from amazon... there goes my bank account qq",
+"my bro is literally driving me insane. he's such a bozo",
+"minecraft steve in smash..so osm..so much sWaG",
+"I always love a good rpg now and then",
+"saw a cat the other day, we are now cuddy",
+"my cat is such a cutie bestie!!",
+"Can you rly call yourself a gamer if u dont play minecraft",
+"tfw when no gf ;u;"]
+
+        tweet=""
         for t in range(numTrials):
-            tweet = ""
+            tweet = tweet+new_tweet[t][:stepSize]
             start= time.time()
             myFn(tweet)
             end=time.time()
