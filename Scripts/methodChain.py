@@ -25,6 +25,7 @@ def load_and_processSlang():
     # Chain 1: Data loaded
     df1 = (
         pd.read_csv(os.path.join('..','Dataset','slangs.csv'))
+        .dropna()
     )
     return df1
 
