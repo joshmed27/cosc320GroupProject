@@ -16,9 +16,7 @@ import random
 def tryItABunch2(startN, endN, stepSize, numTrials):
     nValues = []
     tValues = []
-    samplen = []
-    sampmem = []
-        
+    sample = []
 
     for n in range(startN, endN, stepSize):
         runtime = 0
