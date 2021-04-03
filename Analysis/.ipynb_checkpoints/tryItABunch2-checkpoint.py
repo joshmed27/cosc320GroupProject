@@ -1,42 +1,34 @@
 import time
-import random
+from random import choice
 
-# tryItABunch: runs a function a bunch, and times how long it takes.
-#
-# Input: myFn: a function which takes as input a string (tweet)
-# Output: lists nValues and tValues so that running myFn on a string of length nValues[i] took (on average over numTrials tests) time tValues[i] milliseconds.
-#
-# Other optional args:
-#    - startN: smallest n to test
-#    - endN: largest n to test
-#    - stepSize: test n's in increments of stepSize between startN and endN
-#    - numTrials: for each n tests, do numTrials tests and average them
-#    - listMax: the input lists of length n will have values drawn uniformly at random from range(listMax)
+#O (m+n^2 graph)
 
-def tryItABunch2(startN, endN, stepSize, numTrials):
+def tryItABunch2(numTrials):
+    nVals = [2**k for k in range(9)] # let's try it at a bunch of powers of 2, we'll see why later...
+    nVals += [k*10 for k in range(10)]
+    nVals += [k*50 for k in range(2,11)]# plus some spaced-out points...
+    nVals.sort() # put them in order
+    
     nValues = []
     tValues = []
-    sample = []
-
-    for n in range(startN, endN, stepSize):
+    for n in nVals:
+        # run myFn several times and average to get a decent idea.
         runtime = 0
-        #Appends stepSize amount of numbers to sample
-        for k in range(stepSize):
-            sample.append(random.randint(1,30))
-        
-        # numTrials with step size of iterating lists
         for t in range(numTrials):
-            start= time.time()
-            for k in range(len(sample)):
-                sample[k]
-
-            for k in range(len(sample)):
-                sample[k]
-                
-            end=time.time()
+            lst = [ choice(range(10)) for i in range(n) ] # generate a random list of length n
+            lst2 = [ choice(range(10)) for i in range(n) ] # generate a random list of length n
+            start = time.time()
+            n2_algorithm(lst,lst2)
+            end = time.time()
             runtime += (end - start) * 1000 # measure in milliseconds
-	        
         runtime = runtime/numTrials
         nValues.append(n)
         tValues.append(runtime)
     return nValues, tValues
+
+def n2_algorithm(items, items2):
+    for first in items:
+        for second in items:
+            item3 = first+second
+    for first in items2:
+        item4 = first
