@@ -1,9 +1,9 @@
 import time
 from random import choice
 
-#O (m+n^2 graph)
+#O (m+n+n graph)
 
-def tryItABunch2(numTrials):
+def tryItABunch3(numTrials):
     nVals = [2**k for k in range(9)] # let's try it at a bunch of powers of 2, we'll see why later...
     nVals += [k*10 for k in range(10)]
     nVals += [k*50 for k in range(2,11)]# plus some spaced-out points...
@@ -11,7 +11,7 @@ def tryItABunch2(numTrials):
     
     nValues = []
     tValues = []
-    for n in nVals:
+    for n in range(148, 10000, 74):
         # run myFn several times and average to get a decent idea.
         runtime = 0
         for t in range(numTrials):
@@ -28,7 +28,8 @@ def tryItABunch2(numTrials):
 
 def n2_algorithm(items, items2):
     for first in items:
-        for second in items:
-            item3 = first+second
-    for first in items2:
-        item4 = first
+        item2 = first
+    for second in items:
+        item3 = second
+    for third in items2:
+        item4 = third
